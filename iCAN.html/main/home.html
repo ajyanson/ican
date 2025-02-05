@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCAN Therapy Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #5DA0C7;
+            --accent-color: #E8F4FC;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+
+        body {
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--gradient);
+            padding: 1.5rem 5%;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .hero {
+            position: relative;
+            height: 80vh;
+            background: var(--gradient),
+                        url('https://images.unsplash.com/photo-1584697964358-3e14ca57658b');
+            background-size: cover;
+            background-blend-mode: multiply;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .experience-badge {
+            background: rgba(255,255,255,0.15);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 4rem 5%;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .login-container {
+            max-width: 500px;
+            margin: 5rem auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .login-header {
+            background: var(--gradient);
+            padding: 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .login-form {
+            padding: 2rem;
+        }
+
+        .modern-input {
+            width: 100%;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        .modern-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .btn-gradient {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-gradient:hover {
+            transform: scale(1.02);
+        }
+
+        .decoration-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" fill-opacity="1" d="M0,160L48,138.7C96,117,192,75,288,74.7C384,75,480,117,576,138.7C672,160,768,160,864,138.7C960,117,1056,75,1152,64C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            padding: 5rem 5%;
+            background: var(--accent-color);
+        }
+
+        .about-content {
+            flex: 1;
+            padding-right: 4rem;
+        }
+
+        .experience-timeline {
+            flex: 1;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin: 2rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">iCAN<span>Creating Abilities Now</span></div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="experience-badge">
+                    <i class="fas fa-award"></i>
+                    <span style="margin: 0 1rem">10 Years of Healing Excellence</span>
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h1>Transformative Therapy Services Since 2013</h1>
+                <p>Empowering over 5,000 individuals through compassionate care and innovative therapy programs</p>
+            </div>
+            <div class="decoration-wave"></div>
+        </div>
+
+        <div class="services-grid">
+            <!-- Replace the existing services-grid with this structured content -->
+<section id="home">
+    <!-- ... Hero section remains same ... -->
+    <div class="services-section">
+        <!-- Core Services -->
+        <h2 class="category-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-hands service-icon"></i>
+                <h3>Occupational Therapy</h3>
+                <p>Enhancing daily living skills and sensory integration</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-comments service-icon"></i>
+                <h3>Speech Language Therapy</h3>
+                <p>Improving communication and language skills</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-baby-carriage service-icon"></i>
+                <h3>Early Intervention</h3>
+                <p>Timely support for developmental challenges</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-book-open service-icon"></i>
+                <h3>SPED Tutorial</h3>
+                <p>Specialized educational support</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-school service-icon"></i>
+                <h3>School Readiness</h3>
+                <p>Preparing children for academic success</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-users service-icon"></i>
+                <h3>Group Therapy</h3>
+                <p>Collaborative therapeutic sessions</p>
+            </div>
+        </div>
+
+        <!-- Specializations -->
+        <h2 class="category-title" style="margin-top: 4rem;">Specializations</h2>
+        <div class="services-grid">
+            <div class="service-card specialization-card">
+                <i class="fas fa-puzzle-piece service-icon"></i>
+                <h3>Autism Spectrum Disorder</h3>
+                <p>Specialized support for ASD individuals</p>
+            </div>
+            <div class="service-card specialization-card">
+                <i class="fas fa-bolt service-icon"></i>
+                <h3>ADHD/ADD/ODD</h3>
+                <p>Managing attention and behavioral challenges</p>
+            </div>
+            <div class="service-card specialization-card">
+                <i class="fas fa-brain service-icon"></i>
+                <h3>Learning Disabilities</h3>
+                <p>Tailored learning strategies</p>
+            </div>
+            <div class="service-card specialization-card">
+                <i class="fas fa-hands-helping service-icon"></i>
+                <h3>Intellectual Disabilities</h3>
+                <p>Comprehensive support programs</p>
+            </div>
+            <div class="service-card specialization-card">
+                <i class="fas fa-heart service-icon"></i>
+                <h3>Down's Syndrome</h3>
+                <p>Specialized care and development plans</p>
+            </div>
+            <div class="service-card specialization-card">
+                <i class="fas fa-hand-sparkles service-icon"></i>
+                <h3>Sensory Processing Disorder</h3>
+                <p>Custom sensory integration therapy</p>
+            </div>
+        </div>
+
+        <!-- Specialized Services -->
+        <h2 class="category-title" style="margin-top: 4rem;">Specialized Services</h2>
+        <div class="services-grid">
+            <div class="service-card specialized-service-card">
+                <i class="fas fa-hands service-icon"></i>
+                <h3>PROMPT Therapy</h3>
+                <p>Tactile-kinesthetic approach to speech therapy</p>
+            </div>
+            <div class="service-card specialized-service-card">
+                <i class="fas fa-comment-medical service-icon"></i>
+                <h3>OPT - Oral Placement Therapy</h3>
+                <p>Improving speech clarity through oral motor exercises</p>
+            </div>
+            <div class="service-card specialized-service-card">
+                <i class="fas fa-mind-share service-icon"></i>
+                <h3>Cognitive Behavioral Therapy</h3>
+                <p>Evidence-based psychological intervention</p>
+            </div>
+        </div>
+
+        <!-- Additional Services -->
+        <h2 class="category-title" style="margin-top: 4rem;">Additional Programs</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-users service-icon"></i>
+                <h3>Socialization Activities</h3>
+                <p>Developing social interaction skills</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chalkboard-teacher service-icon"></i>
+                <h3>Staff & Family Training</h3>
+                <p>Empowering support networks</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-palette service-icon"></i>
+                <h3>Arts & Crafts Therapy</h3>
+                <p>Creative expression for development</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-gamepad service-icon"></i>
+                <h3>Play Therapy</h3>
+                <p>Therapeutic learning through play</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-briefcase service-icon"></i>
+                <h3>Prevocational Training</h3>
+                <p>Developing work-related skills</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-user-friends service-icon"></i>
+                <h3>Parenting Seminars</h3>
+                <p>Guidance for effective parenting strategies</p>
+            </div>
+        </div>
+    </div>
+</section>
+</section>

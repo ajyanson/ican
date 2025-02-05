@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - iCAN Therapy Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #5DA0C7;
+            --accent-color: #E8F4FC;
+            --background-color: #f7f7f7;
+            --card-bg: #fff;
+            --border-radius: 15px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .about-section {
+            padding: 6rem 10%;
+            background-color: var(--accent-color);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-header p {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 3rem;
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .card h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .milestones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .milestone-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .milestone-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-description {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .about-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .about-header p {
+                font-size: 1rem;
+            }
+
+            .milestones {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">iCAN<span> Therapy Center</span></div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-header">
+            <h2>About iCAN Therapy Center</h2>
+            <p>Empowering individuals with special needs through compassionate care and innovative therapeutic services.</p>
+        </div>
+
+        <div class="about-cards">
+            <div class="card">
+                <i class="fas fa-history"></i>
+                <h4>Our Story</h4>
+                <p>Founded in 2013, iCAN Therapy Center has grown from a small practice into a leading provider of personalized therapy services.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h4>Our Approach</h4>
+                <p>We use evidence-based practices combined with creative, customized interventions tailored to each individual’s needs.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h4>Our Team</h4>
+                <p>Our team of certified and experienced therapists works collaboratively to support the growth and development of each individual.</p>
+            </div>
+        </div>
+
+        <!-- Milestones Section -->
+        <div class="milestones">
+            <div class="milestone-card">
+                <div class="milestone-number">10+</div>
+                <div class="milestone-description">Years of Service</div>
+            </div>
+            <div class="milestone-card">
+                <div class="milestone-number">5000+</div>
+                <div class="milestone-description">Sessions Completed</div>
+            </div>
+            <div class="milestone-card">
+                <div class="milestone-number">95%</div>
+                <div class="milestone-description">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
